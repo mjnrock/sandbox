@@ -15,6 +15,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route exact path="/" component={ UserInterface } />
+					<Route exact path="/cat" component={ UserInterface } />
 				</Switch>
 			</Router>
 		</Context.Provider>
