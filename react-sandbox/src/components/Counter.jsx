@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useState, useEffect } from "react";
 
 function* myGenerator() {
 	let state = { count: 0 };
@@ -8,11 +8,9 @@ function* myGenerator() {
 		if(typeof action === "object") {
 			switch(action.type) {
 				case "INCREMENT":
-					console.log(1)
 					state = { ...state, count: state.count + 1 };
 					break;
 				case "DECREMENT":
-					console.log(-1)
 					state = { ...state, count: state.count - 1 };
 					break;
 				default:
@@ -32,8 +30,14 @@ export function Counter() {
 		setState(store.next(action).value);
 	};
 
+	useEffect(() => {
+		(async () => {
+			console.log(Date.now(), state);
+		})();
+	}, [ state ]);
+
 	return (
-		<div className="flex items-center justify-center h-screen">
+		<div className="flex items-center justify-center h-screen select-none">
 			<div className="p-8 bg-white rounded-lg shadow-lg">
 				<h1 className="mb-4 text-2xl font-bold text-center">Count: <span className="text-gray-400">{ state.count }</span></h1>
 				<div className="flex justify-center gap-4">
