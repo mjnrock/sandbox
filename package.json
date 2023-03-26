@@ -6,12 +6,17 @@
 	"author": "LesPantsFancy <mjnrock@umich.edu>",
 	"license": "MIT",
 	"dependencies": {
+		"@tensorflow/tfjs-node": "^4.2.0",
 		"compromise": "^14.8.2",
+		"danfojs-node": "^1.1.2",
 		"esm": "^3.2.25",
 		"natural": "^6.2.0",
 		"sentiment": "^5.0.2"
 	},
 	"scripts": {
 		"start": "node -r esm index.js"
+	},
+	"devDependencies": {
+		"tailwindcss": "^3.2.6"
 	}
 }
